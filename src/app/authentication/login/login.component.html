@@ -1,0 +1,47 @@
+<div class="flex items-center justify-center min-h-screen bg-slate-50">
+    <div class="flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
+      <!-- Left -->
+      <div class="p-6 md:p-20 md:w-[600px]">
+        <h2 class="mb-5 text-4xl font-bold text-[#CAAF79]">تسجيل الدخول</h2>
+        <p class="max-w-sm mb-12 font-light text-gray-600">
+          مرحبًا بعودتك! يرجى تسجيل الدخول للوصول إلى لوحة التحكم الشخصية الخاصة بك وإدارة جميع ميزات وزارة البترول.
+        </p>
+    
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <input
+            type="text"
+            formControlName="username"
+            [ngClass]="{ 'border-red-500': username?.invalid && username?.touched, 'border-gray-300': !(username?.invalid && username?.touched) }"
+            class="w-full p-3 border rounded-md placeholder:font-sans placeholder:font-light"
+            placeholder="أدخل اسم المستخدم الخاص بك"
+          />
+          <div *ngIf="username?.invalid && username?.touched" class="text-red-500 text-sm mt-1">
+            اسم المستخدم مطلوب.
+          </div>
+    
+          <input
+            type="password"
+            formControlName="password"
+            [ngClass]="{ 'border-red-500': password?.invalid && password?.touched, 'border-gray-300': !(password?.invalid && password?.touched) }"
+            class="w-full p-3 border mt-4 rounded-md placeholder:font-sans placeholder:font-light"
+            placeholder="أدخل كلمة المرور الخاصة بك"
+          />
+          <div *ngIf="password?.invalid && password?.touched" class="text-red-500 text-sm mt-1">
+            كلمة المرور مطلوبة.
+          </div>
+    
+          <button type="submit" class="w-full p-3 mt-6 rounded-md bg-[#354340] text-[#fff] hover:bg-[#727b79] font-bold cursor-pointer">
+            تسجيل الدخول
+          </button>
+        </form>
+      </div>
+    
+      <!-- Right Component -->
+      <img
+        [src]="imagePath"
+        alt="وزارة النفط الكويتية"
+        class="w-[400px] h-[600px] rounded-l-2xl hidden md:block"
+      />
+    </div>
+  </div>
+  

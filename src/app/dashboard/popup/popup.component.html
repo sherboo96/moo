@@ -1,0 +1,347 @@
+<div
+  id="popup"
+  [class.hidden]="!showPopup"
+  data-modal-backdrop="static"
+  tabindex="-1"
+  aria-hidden="true"
+  class="hidden fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50"
+>
+  <div class="relative p-4 w-full max-w-7xl max-h-full">
+    <!-- Modal content -->
+    <div
+      class="relative bg-white rounded-lg shadow dark:bg-gray-700 max-h-screen overflow-y-auto"
+    >
+      <!-- Modal header -->
+      <div
+        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+      >
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+          طلب رقم 1177
+        </h3>
+        <button
+          (click)="onClosePopup()"
+          type="button"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-hide="static-modal"
+        >
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="p-4 md:p-5 space-y-4">
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <div>
+            <label
+              for="first_name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الاشارة</label
+            >
+            <input
+              type="text"
+              id="first_name"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.signal }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="last_name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >نوع الترخيص</label
+            >
+            <input
+              type="text"
+              id="last_name"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.Ttype }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="company"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >أسم مقدم الطلب</label
+            >
+            <input
+              type="text"
+              id="company"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.requesterName }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="phone"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >رقم الكتاب المشترك</label
+            >
+            <input
+              type="text"
+              id="phone"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.bookNumber }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="website"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الرقم المدني لمقدم الجهة</label
+            >
+            <input
+              type="text"
+              id="website"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.requesterCivilNo }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >أسم الشركة</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.requesterName }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الكويت في</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.kuwaitIn }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الرقم المركزي</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.centeralNumber }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الرقم المدني للجهة</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.orgCivilNo }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الرقم المشترك للترخيص</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.MtNo }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >رقم الترخيص</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.TNo }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >العنوان</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.address }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >الرقم الالي للعنوان</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.EN }}"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="visitors"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >تاريخ الطلب</label
+            >
+            <input
+              type="text"
+              id="visitors"
+              [disabled]="true"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="{{ request.createdOn }}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">رقم النشاط</th>
+                <th scope="col" class="px-6 py-3">اسم النشاط</th>
+                <th scope="col" class="px-6 py-3">الوصف</th>
+                <th scope="col" class="px-6 py-3">نوع العملية</th>
+                <th scope="col" class="px-6 py-3">رقم العملية</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  812908
+                </th>
+                <td class="px-6 py-4">حفر آبار</td>
+                <td class="px-6 py-4">حفر آبار النفط</td>
+                <td class="px-6 py-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">تجديد ترخيص</span>
+                </td>
+                <td class="px-6 py-4">1</td>
+              </tr>
+              <tr
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  492305
+                </th>
+                <td class="px-6 py-4">أدوات الصناعات البترولية</td>
+                <td class="px-6 py-4">أدوات الصناعات البترولية</td>
+                <td class="px-6 py-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">تجديد ترخيص</span>
+                </td>
+                <td class="px-6 py-4">1</td>
+              </tr>
+              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                492305
+                </th>
+                <td class="px-6 py-4">تنظيف الخزنات والحويات</td>
+                <td class="px-6 py-4">تنظيف الخزنات والحويات</td>
+                <td class="px-6 py-4">
+                    <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">تعديل عنوان</span>
+                </td>
+                <td class="px-6 py-4">13</td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-800">
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                812908
+                </th>
+                <td class="px-6 py-4">نقل السولار</td>
+                <td class="px-6 py-4">نقل السولار</td>
+                <td class="px-6 py-4">
+                    <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">تعديل عنوان</span>
+                </td>
+                <td class="px-6 py-4">13</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <button data-modal-hide="static-modal" type="button" class="text-white bg-[#354340] hover:bg-[#727b79] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">موافقة</button>
+            <button data-modal-hide="static-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-red-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">رفض</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
